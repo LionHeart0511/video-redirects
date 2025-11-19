@@ -2,11 +2,62 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>跳转中...</title>
-  <meta http-equiv="refresh" content="0;url=https://weibo.com/tv/show/1034:5052171478040665?from=old_pc_videoshow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>王楚钦 · 杭州亚运会决赛</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      text-align: center;
+      padding: 60px 20px;
+      background: #ffffff;
+      color: #1a1a1a;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    h2 {
+      color: #d32f2f;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 14px 28px;
+      background: #d32f2f;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .tip {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-  <p>正在跳转到视频页面，请稍候……</p>
-  <p><a href="https://weibo.com/tv/show/1034:5052171478040665?from=old_pc_videoshow">如果未跳转，请点击此处</a></p>
+  <h2>🏓 王楚钦 vs 樊振东 · 杭州亚运会男单决赛</h2>
+  <p>正在跳转视频，请稍候…</p>
+  <a href="https://weibo.com/tv/show/1034:5052171478040665?from=old_pc_videoshow" class="btn" id="go">▶ 点击观看比赛</a>
+
+  <script>
+    // 强制 HTTPS
+    if (location.protocol !== 'https:') {
+      location.replace('https:' + location.href.substring(location.protocol.length));
+    }
+
+    // 1.5秒后自动跳转（给页面加载留时间）
+    setTimeout(() => {
+      window.location.href = "https://weibo.com/tv/show/1034:5052171478040665?from=old_pc_videoshow";
+    }, 1500);
+
+    // 按钮点击立即跳转
+    document.getElementById('go').onclick = function(e) {
+      window.location.href = "https://weibo.com/tv/show/1034:5052171478040665?from=old_pc_videoshow";
+    };
+  </script>
 </body>
 </html>
+
