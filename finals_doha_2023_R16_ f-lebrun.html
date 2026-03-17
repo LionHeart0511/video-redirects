@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>跳转中...</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      text-align: center;
+      padding: 60px 20px;
+      background: #ffffff;
+      color: #1a1a1a;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    h2 { color: #d32f2f; margin-bottom: 20px; }
+    .btn {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 14px 28px;
+      background: #d32f2f;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .tip { margin-top: 30px; font-size: 14px; color: #666; }
+  </style>
+</head>
+<body>
+  <h2>🏓 正在跳转...</h2>
+  <p>请稍候，或点击下方按钮观看</p>
+  <a href="https://video.weibo.com/show?fid=1034:4986267306229775" class="btn" id="go">▶ 点击观看</a>
+  <div class="tip">
+    若未自动跳转，请点击上方按钮<br>
+    建议在 Safari 或 Chrome 中打开
+  </div>
+
+  <script>
+    // 强制 HTTPS
+    if (location.protocol !== 'https:') {
+      location.replace('https:' + location.href.substring(location.protocol.length));
+    }
+    // 自动跳转
+    setTimeout(() => {
+      window.location.href = "https://video.weibo.com/show?fid=1034:4986267306229775";
+    }, 1500);
+    // 按钮跳转
+    document.getElementById('go').onclick = function(e) {
+      window.location.href = "https://video.weibo.com/show?fid=1034:4986267306229775";
+    };
+  <\/script>
+</body>
+</html>
